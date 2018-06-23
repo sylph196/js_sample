@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Team Woollim</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage plugin by Alvaro Trigo. Pure javascript version of full screen slider." />
+	<meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple,pure,javascript,slider,hijacking" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
+
+	<script src="granim.min.js"></script>
+	
+	<link href="reset.css" rel="stylesheet" type="text/css">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<style>
+		/* Section 1
+		 * --------------------------------------- */
+		#section0{
+			background-color: #FFF;
+		}
+		#section0 h1{
+			color: #444;
+		}
+		
+
+
+		/* Section 2
+		 * --------------------------------------- */
+		#section1{
+			background-color: #2EBE21;
+		}
+		#section1 h1{
+			color: #fff;
+		}
+		
+
+		/* Section 3
+		 * --------------------------------------- */
+		#section2{
+			background-color: #2C3E50;
+		}
+		#section2 h1{
+			color: #F2F2F2;
+		}
+		#section2 p{
+			opacity: 0.6;
+		}
+	</style>
+</head>
+
+<body onhashchange="ref();" onLoad="ref();">
+	<canvas id="canvas-basic"></canvas>
+	<div id="full" class="dnone" onClick="_close()">
+		<div id="fullimg" src="#"></div>
+	</div>
+	<div id="header">
+		<div id="button">
+			<div id="hw" class="selector_container" onclick="mouseClick(this);" onmouseover="mouseOver(this);" onmouseout="mouseOut(this);">
+				<div class="back"></div>
+				<div id="s1_img" class="selector"></div>
+			</div>
+			<div id="sh" class="selector_container" onclick="mouseClick(this);" onmouseover="mouseOver(this);" onmouseout="mouseOut(this);">
+				<div class="back"></div>				
+				<div id="s2_img" class="selector"></div>
+			</div>
+			<div id="hi" class="selector_container" onclick="mouseClick(this);" onmouseover="mouseOver(this);" onmouseout="mouseOut(this);">
+				<div class="back"></div>
+				<div id="s3_img" class="selector"></div>
+			</div>
+		</div>
+	</div>
+	<div id="body">
+		<div id="box" class="box">
+			<div id="fullpage">
+				<div class="section" id="section0">
+					<div class="slide" id="slide1">
+							<div id="profile">
+								<div id="profile_left" class="profile_sort">
+									<div id="profile_preview" class="left">
+										<div id="profile_jobicon"></div>
+										<div id="profile_jobname"></div>
+										<div id="profile_catchphrase">
+											<p id="p_1">“분석력과 기획력”</p>
+											<p id="p_2">“도전정신과 적응력”</p>
+											<p id="p_3">“다양한 분야에 대한 높은 이해도”</p>
+											<p id="p_4">“남들과는 다른 생각”</p>
+										</div>
+									</div>
+									<div id="profile_name" class="left">
+										<div id="profile_realname"></div>
+										<div id="profile_emphasize"></div>
+										<div id="profile_name_preview">
+											<p id="p_7">1996. 12. 19</p>
+											<p id="p_8">Graphic Designer</p>
+											<p id="p_9">Video Designer</p>
+											<p id="p_10">Web Designer</p>
+										</div>
+									</div>
+									<div id="profile_skills" class="left">
+										<div id="profile_skilltitle"></div>
+										<div id="profile_skilllist"></div>
+									</div>
+								</div>
+								<div id="profile_right" class="profile_sort">
+									<div id="profile_career" class="right">
+										<div id="profile_careertitle"></div>
+										<div id="profile_careerlist">
+											<div>
+												<div></div>
+												<div>
+													<p id="p_14">2014.11 - 2017.06</p>
+													<p id="p_18">김태균수학클리닉<br>
+													초중등부 총괄<br>
+													홍보마케팅부 주임</p>
+												</div>
+											</div>
+											<div>
+												<div></div>
+												<div>
+													<p id="p_15">2014.11 - 2017.06</p>
+													<p id="p_19">김태균수학클리닉<br>
+													초중등부 총괄<br>
+													홍보마케팅부 주임</p>
+												</div>
+											</div>
+											<div>
+												<div></div>
+												<div>
+													<p id="p_16">2014.11 - 2017.06</p>
+													<p id="p_20">김태균수학클리닉<br>
+													초중등부 총괄<br>
+													홍보마케팅부 주임</p>
+												</div>
+											</div>
+											<div>
+												<div></div>
+												<div>
+													<p id="p_17">2014.11 - 2017.06</p>
+													<p id="p_21">김태균수학클리닉<br>
+													초중등부 총괄<br>
+													홍보마케팅부 주임</p>
+												</div>
+											</div>	
+										</div>
+									</div>
+									<div id="profile_contact" class="right">
+										<div id="profile_contacttitle"></div>
+										<div id="profile_contact_call"><div></div><div><span id="p_11">010 8443 7090</span></div></div>
+										<div id="profile_contact_email"><div></div><div><span id="p_12">sylph196@gmail.com</span></div></div>
+										<div id="profile_contact_sns"><div></div><div><span id="p_13">fb.me/violet.jeon.94</span></div></div>
+									</div>
+								</div>
+							</div>
+						
+					</div>
+					<div class="slide" id="slide2">
+						<div id="picture">
+							<div onClick="full(this)"></div>
+							<div onClick="full(this)"></div>
+							<div onClick="full(this)"></div>
+							<div onClick="full(this)"></div>
+							<div onClick="full(this)"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+	<script type="text/javascript" src="javascript.fullPage.js"></script>
+</html>
